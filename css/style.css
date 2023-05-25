@@ -71,3 +71,41 @@ header > span {
     line-height: 1.2;
     height: 9rem;
 }
+.notes-panel-display .note .note-addons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    /* padding: 1rem; */
+}
+.notes-panel-display .note .note-addons .date {
+    font-size: 1.4rem;
+    color: #555;
+    padding-bottom: 1.5rem;
+}
+.notes-panel-display .note .note-addons .del-update {
+    font-size: 1.4rem;
+    color: #555;
+    padding-bottom: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+.note .note-addons .del-update ul {
+   list-style-type: none; 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   display: none;
+   left: 0;
+   top: 100%;
+}
+.note .note-addons .del-update:hover ul {
+    display: block;
+}
+.note .note-addons .del-update ul li {
+    left: 0;
+    top: 100%;
+ }
