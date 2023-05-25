@@ -1,0 +1,67 @@
+<!-- 
+    Name: Seyi Samuel
+    Description: Using HTML5 to create a skeletal framework for a note app.
+    Date: 25.05.2023
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteApp</title>
+</head>
+<body>
+    <header>
+        Note<span>App</span>
+    </header>
+
+    <div class="note-container">
+        <div class="notes-panel-display">
+            <div class="note">
+                <div class="note-text">
+                    <h3 id="note-title">Title display after getting it from the form page</h3>
+                    <p id="note-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, saepe. Message from the note will be here
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, saepe. Message from the note will be here
+                    </p>
+                </div>
+                <div class="note-addons">
+                    <span class="date">25/05/2023...12:47</span>
+                    <span class="del-update">...
+                         <ul>
+                            <button class="edit-note" type="button">update</button>
+                            <button class="delete-note" type="button">delete</button>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+            <div class="note">
+                <div class="note-text">
+                    <h3 id="note-title">Title display from the form page</h3>
+                    <p id="note-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, saepe. Message from the note will be here
+                        re
+                    </p>
+                </div>
+                <div class="note-addons">
+                    <span class="date">25/05/2023...12:47</span>
+                    <span class="del-update">...
+                         <ul>
+                            <li><button class="edit-note" type="button">update</button></li>
+                            <li><button class="delete-note" type="button">delete</button></li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="note-form hidden">
+            <h3 id="note-heading">Add a new note</h3>
+            <input type="text" class="note-form-title" placeholder="note title">
+            <textarea placeholder="note description" class="note-form-description" cols="30" rows="10"></textarea>
+            <input type="submit" value="add note">
+        </div> 
+        <!-- <hr>-->
+        <button class="btn" type="button">new note</button>
+    </div>
+</body>
+</html>
