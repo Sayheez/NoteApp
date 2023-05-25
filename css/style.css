@@ -58,3 +58,16 @@ header > span {
     border: 0.01rem solid rgba(241, 6, 139, 0.35);
     background-color: #fff;
 }
+.notes-panel-display .note .note-text {
+    padding: 0.7rem;
+}
+.notes-panel-display .note .note-text #note-title {
+    font-size: 1.7rem;
+    color: #222;
+}
+.notes-panel-display .note .note-text #note-description {
+    font-size: 1.5rem;
+    color: #444;
+    line-height: 1.2;
+    height: 9rem;
+}
