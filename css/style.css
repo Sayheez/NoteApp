@@ -127,3 +127,22 @@ header > span {
     padding: 1.5rem 0;
     text-align: center;
 }
+.note-form > .note-form-title,
+.note-form > .note-form-description {
+    width: 90%;
+    margin: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    border: 0.01rem solid rgba(241, 6, 139, 0.35);
+    font-size: 1.6rem;
+    color: #222;
+}
+.note-form > .note-form-title:focus,
+.note-form > .note-form-description:focus {
+    border: 0.01rem solid #222;
+    background: rgba(241, 6, 139, 0.1);
+}
+.note-form > .note-form-description {
+    height: 20rem;
+    resize: none;
+}
