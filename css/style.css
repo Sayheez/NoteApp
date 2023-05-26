@@ -146,3 +146,38 @@ header > span {
     height: 20rem;
     resize: none;
 }
+.note-form > input[type="submit"] {
+    display: inline-block;
+    margin: 0 0 1.5rem 1rem;
+    width: 90%;
+    margin-left: 1rem;
+    padding: .7rem 2.5rem;
+    text-align: center;
+    border-radius: 0.35rem;
+    cursor: pointer;
+    background: rgba(241, 6, 139, 0.7);
+    border: 0.01rem solid rgba(241, 6, 139, 0.35);
+    font-size: 2rem;
+    color: #fff;
+}
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    text-align: center;
+    border-radius: 0.35rem;
+    cursor: pointer;
+    background: rgba(241, 6, 139, 0.7);
+    border: 0.01rem solid rgba(241, 6, 139, 0.35);
+    font-size: 2rem;
+    color: #fff;
+
+    position: absolute;
+    top: 72%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+}
+.btn:hover {
+    color: #333;
+    background: rgba(241, 6, 139, 0.4);
+}
