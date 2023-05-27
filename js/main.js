@@ -34,3 +34,9 @@ const getNoteForm = () => {
 
     noteContainer.insertAdjacentHTML("beforeend", noteForm);
 }
+
+// Display all notes
+const addNewNote = (inpVal, textVal, dateVal) => {
+    console.log("add note btn");
+    notesPanelDisplay.insertAdjacentHTML("afterbegin", noteDisplay);
+};
