@@ -14,25 +14,8 @@ const noteForm = document.querySelector(".note-form");
 const noteContainer = document.querySelector(".note-container");
 const notesPanelDisplay = document.querySelector(".note-panel-display");
 const backgroundDrop = document.querySelector(".overlay");
+const addNoteBtn = document.querySelector(".note-form input[type='submit']");
 
-
-const noteDisplay = `
-    <div class="note">
-        <div class="note-text">
-            <h3 id="note-title">{ input.value }</h3>
-            <p id="note-description">{ textarea.value } </p>
-        </div>
-        <div class="note-addons">
-            <span class="date">{ new Date().getTime() }</span>
-            <span class="del-update">...
-                <ul>
-                    <button class="edit-note" type="button">update</button>
-                    <button class="delete-note" type="button">delete</button>
-                </ul>
-            </span>
-        </div>
-    </div>
-`;
 
 /*  Event Listeners*/
 newNoteBtn.addEventListener("click", (e) => {
@@ -47,17 +30,20 @@ closeNewNotePop.addEventListener("click", () => {
     closeNoteForm();
 });
 
+// Add note to the all notes, and also store in localStorage 
+addNoteBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("add note btn");
+});
+
 /* Functions */
 // close note form
 const closeNoteForm = () => {
-    overlayBG.classList.add("hidden");
+    backgroundDrop.classList.add("hidden");
     noteForm.classList.add("hidden");
 };
 
 
 
 // Display all notes
-const addNewNote = (inpVal, textVal, dateVal) => {
-    console.log("add note btn");
-    notesPanelDisplay.insertAdjacentHTML("afterbegin", noteDisplay);
-};
+
