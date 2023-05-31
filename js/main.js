@@ -9,6 +9,7 @@
 /*  Variables*/
 //Get the dom element
 const newNoteBtn = document.querySelector(".btn");
+const closeNewNotePop = document.querySelector(".note-form i");
 const noteForm = document.querySelector(".note-form");
 const noteContainer = document.querySelector(".note-container");
 const notesPanelDisplay = document.querySelector(".note-panel-display");
@@ -40,8 +41,18 @@ newNoteBtn.addEventListener("click", (e) => {
     noteForm.classList.remove("hidden");
 });
 
-/* Functions */
+// To close the note form displayed
+closeNewNotePop.addEventListener("click", () => {
+    console.log("removed note form pop");
+    closeNoteForm();
+});
 
+/* Functions */
+// close note form
+const closeNoteForm = () => {
+    overlayBG.classList.add("hidden");
+    noteForm.classList.add("hidden");
+};
 
 
 
