@@ -12,6 +12,8 @@ const newNoteBtn = document.querySelector(".btn");
 const noteForm = document.querySelector(".note-form");
 const noteContainer = document.querySelector(".note-container");
 const notesPanelDisplay = document.querySelector(".note-panel-display");
+const backgroundDrop = document.querySelector(".overlay");
+
 
 const noteDisplay = `
     <div class="note">
@@ -34,9 +36,8 @@ const noteDisplay = `
 /*  Event Listeners*/
 newNoteBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log("New note btn");
-    
-
+    backgroundDrop.classList.remove("hidden");
+    noteForm.classList.remove("hidden");
 });
 
 /* Functions */
