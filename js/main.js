@@ -15,6 +15,9 @@ const noteContainer = document.querySelector(".note-container");
 const notesPanelDisplay = document.querySelector(".note-panel-display");
 const backgroundDrop = document.querySelector(".overlay");
 const addNoteBtn = document.querySelector(".note-form input[type='submit']");
+const inputtedTitle = document.querySelector(".note-form .note-form-title");
+const textBody = document.querySelector(".note-form .note-form-description");
+const notesLS = JSON.parse(localStorage.getItem("notes") || "[]");
 
 
 /*  Event Listeners*/
@@ -34,6 +37,26 @@ closeNewNotePop.addEventListener("click", () => {
 addNoteBtn.addEventListener("click", (e) => {
     e.preventDefault();
     console.log("add note btn");
+    let noteTitle = inputtedTitle.value;
+    let noteDescription = textBody.value;
+    if(noteTitle || noteDescription) {
+        let date = new Date().toLocaleString();
+
+        let noteInfo = {
+            "title": noteTitle,
+            "description": noteDescription,
+            date
+        };
+
+        // Push the noteInfo object into the array created 
+        notesLS.push(noteInfo);
+
+        // Add the noteInfo object to local storage
+        localStorage.setItem("notes", JSON.stringify(notesLS));
+
+        // closeNoteForm();
+        closeNewNotePop.click();
+    }
 });
 
 /* Functions */
