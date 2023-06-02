@@ -85,7 +85,7 @@ const displayNotes = () => {
                 <div class="note-addons">
                     <span class="date">${noteElement.date} </span>
                     <span class="del-update">
-                        <i onclick="showMenu(this)" >...</i> 
+                        <i onclick="editDeleteBox (this)" >...</i> 
                         <ul>
                             <button onclick="editNote(${index}, '${noteElement.title}', '${noteElement.description}')" class="edit-note" type="button">update</button>
                             <button onclick="removeNote(${index})" class="delete-note" type="button">delete</button>
@@ -100,3 +100,12 @@ const displayNotes = () => {
 
 displayNotes();
 
+const editDeleteBox = (item) => {
+    console.log(item);
+    item.parentElement.classList.add("active");
+    document.addEventListener("click", (e) => {
+        if(e.target.tagName != "I" || e.target != item) {
+            item.parentElement.classList.remove("active");
+        }
+    });
+};
