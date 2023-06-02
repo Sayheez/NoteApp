@@ -12,7 +12,7 @@ const newNoteBtn = document.querySelector(".btn");
 const closeNewNotePop = document.querySelector(".note-form i");
 const noteForm = document.querySelector(".note-form");
 const noteContainer = document.querySelector(".note-container");
-const notesPanelDisplay = document.querySelector(".note-panel-display");
+const notesPanelDisplay = document.querySelector(".notes-panel-display");
 const backgroundDrop = document.querySelector(".overlay");
 const addNoteBtn = document.querySelector(".note-form input[type='submit']");
 const inputtedTitle = document.querySelector(".note-form .note-form-title");
@@ -56,6 +56,8 @@ addNoteBtn.addEventListener("click", (e) => {
 
         // closeNoteForm();
         closeNewNotePop.click();
+
+        displayNotes();
     }
 });
 
@@ -69,4 +71,32 @@ const closeNoteForm = () => {
 
 
 // Display all notes
+const displayNotes = () => {
+    // remove note duplicates
+    document.querySelectorAll(".note").forEach(noteElement => noteElement.remove()); //To remove duplicates
+    // Loop through the notes in the array display on the UI
+    notesLS.forEach((noteElement, index) => {
+        let noteDiv = `
+            <div class="note">
+                <div class="note-text">
+                    <h3 id="note-title">${noteElement.title}</h3>
+                    <p id="note-description"> ${noteElement.description} </p>
+                </div>
+                <div class="note-addons">
+                    <span class="date">${noteElement.date} </span>
+                    <span class="del-update">
+                        <i onclick="showMenu(this)" >...</i> 
+                        <ul>
+                            <button onclick="editNote(${index}, '${noteElement.title}', '${noteElement.description}')" class="edit-note" type="button">update</button>
+                            <button onclick="removeNote(${index})" class="delete-note" type="button">delete</button>
+                        </ul>
+                    </span>
+                </div>
+            </div>`;
+        console.log(notesPanelDisplay);
+        notesPanelDisplay.insertAdjacentHTML("afterbegin", noteDiv);
+    });
+};
+
+displayNotes();
 
