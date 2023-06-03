@@ -18,7 +18,9 @@ const addNoteBtn = document.querySelector(".note-form input[type='submit']");
 const inputtedTitle = document.querySelector(".note-form .note-form-title");
 const textBody = document.querySelector(".note-form .note-form-description");
 const notesLS = JSON.parse(localStorage.getItem("notes") || "[]");
-
+const popUpTitleUpdate = document.querySelector(".note-form #note-heading");
+let isUpdate = false;
+let updateId;
 
 /*  Event Listeners*/
 newNoteBtn.addEventListener("click", (e) => {
@@ -108,4 +110,15 @@ const editDeleteBox = (item) => {
             item.parentElement.classList.remove("active");
         }
     });
+};
+
+const editNote = (noteIndex, noteElementTitle, noteElementDescription) => {
+    isUpdate = true;
+    updateId = noteIndex;
+    newNoteBtn.click();
+    popUpTitleUpdate.innerText = "Update note";
+    addNoteBtn.value = "Update a note";
+    inputt.value = noteElementTitle;
+    textDecriptn.value = noteElementDescription;
+    console.log(noteIndex, noteElementTitle, noteElementDescription);
 };
